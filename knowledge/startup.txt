@@ -1,0 +1,4 @@
+ PYTHONPATH=/workspace/root python -m deepresearcher "Your research topic"
+
+ # Interactive mode
+ PYTHONPATH=/workspace/root python -m deepresearcher --interactive

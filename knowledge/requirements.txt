@@ -1,0 +1,8 @@
+deepagents>=0.2.8
+deepagents-cli>=0.0.12
+tavily-python>=0.7.0
+langchain>=1.0.0
+langgraph>=1.0.0
+langchain-openai>=1.0.0
+langchain-anthropic>=1.0.0
+python-dotenv>=1.0.0
