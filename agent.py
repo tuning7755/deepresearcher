@@ -31,13 +31,9 @@ Skills directory: {skills_dir}
 - Use the working directory from <env> to construct absolute paths
 - Research outputs should go in `{working_dir}/research_[topic]/`
 
-### Web Search Tool Usage
+### Skill-First Workflow
 
-When you use the web_search tool:
-1. The tool will return search results with titles, URLs, and content excerpts
-2. Read and process these results, then respond naturally
-3. Synthesize information from multiple sources into a coherent answer
-4. Cite sources by mentioning page titles or URLs when relevant
+Always auto-discover and prioritize skills before using tools. Use tools such as web_search only when no available skill is a better fit for the task.
 
 {RESEARCH_SYSTEM_PROMPT}
 """

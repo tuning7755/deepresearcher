@@ -5,6 +5,7 @@ Searches the arXiv preprint repository for research papers.
 """
 
 import argparse
+from unittest import result
 
 
 def query_arxiv(query: str, max_papers: int = 10) -> str:
@@ -50,8 +51,8 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    query_arxiv(args.query, max_papers=args.max_papers)
-
+    result = query_arxiv(args.query, max_papers=args.max_papers)
+    print(result)
 
 if __name__ == "__main__":
     main()
