@@ -36,7 +36,6 @@ Your research reports should include:
 ## Tools Available
 
 - `web_search` - Search the web for information (use specific, detailed queries)
-- `fetch_url` - Fetch full content from a URL for deeper analysis (paper pages or PDFs)
 - `task` - Spawn parallel subagents for concurrent research
 - File tools - Create research folders and save findings
 

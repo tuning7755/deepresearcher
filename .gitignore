@@ -10,6 +10,9 @@ __pycache__/
 # Environments
 .env
 .venv/
+research_*/
+research_outputs/
+.venv/
 venv/
 
 # Tooling

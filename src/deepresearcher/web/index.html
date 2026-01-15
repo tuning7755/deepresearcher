@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deep Research Agent</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">DR</span>
+        <div>
+          <div class="brand-title">Deep Research Agent</div>
+          <div class="brand-subtitle">SSE-driven research workspace</div>
+        </div>
+      </div>
+      <div class="status">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Idle</span>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel chat-panel">
+        <div class="panel-header">
+          <h2>Conversation</h2>
+          <p>Start a research topic and continue the thread.</p>
+        </div>
+        <div class="chat-log" id="chatLog"></div>
+        <form class="chat-input" id="chatForm">
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Enter a research topic..."
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="panel research-panel">
+        <div class="panel-header">
+          <h2>Research Stream</h2>
+          <p>Track activities and review the report in real time.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="activities">Activities</button>
+          <button class="tab" data-tab="report">Report</button>
+        </div>
+        <div class="tab-panels">
+          <div class="tab-panel active" id="activitiesPanel">
+            <ul class="activity-log" id="activityLog"></ul>
+          </div>
+          <div class="tab-panel" id="reportPanel">
+            <div class="report-meta" id="reportMeta">No report yet.</div>
+            <pre class="report-content" id="reportContent"></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+:root {
+  --bg: #f7f3ee;
+  --panel: #ffffff;
+  --ink: #1f1b16;
+  --muted: #6b625b;
+  --accent: #1f7a63;
+  --accent-soft: #d7efe8;
+  --shadow: 0 12px 30px rgba(20, 15, 10, 0.08);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Sora", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top right, #fff7e6, var(--bg));
+  background-attachment: fixed;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.brand-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c7bdb4;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(320px, 840px) minmax(320px, 520px);
+  gap: 24px;
+  padding: 0 40px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  animation: rise 0.6s ease;
+}
+
+.panel-header h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.panel-header p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chat-message {
+  padding: 14px 16px;
+  border-radius: 16px;
+  max-width: 85%;
+  line-height: 1.4;
+  animation: fadeIn 0.4s ease;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+}
+
+.chat-message.agent {
+  align-self: flex-start;
+  background: #f0ece7;
+  color: var(--ink);
+}
+
+.chat-input {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #ded6cf;
+  font-size: 15px;
+}
+
+.chat-input button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  border: none;
+  background: #efe8e1;
+  color: var(--ink);
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.tab-panels {
+  flex: 1;
+  overflow: hidden;
+}
+
+.tab-panel {
+  display: none;
+  height: 100%;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.activity-log {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.activity-item {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #f9f6f2;
+  border: 1px solid #efe6de;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.tool-call {
+  width: 100%;
+}
+
+.tool-call summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tool-block {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: #f3efe9;
+  border-radius: 10px;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+.tool-result {
+  background: #eef4f1;
+}
+
+.report-meta {
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.report-content {
+  font-family: "Georgia", "Times New Roman", serif;
+  background: #f8f5f0;
+  border-radius: 16px;
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 960px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    min-height: auto;
+  }
+}

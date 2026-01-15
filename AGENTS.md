@@ -1,14 +1,14 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `main.py` and `__main__.py` provide the CLI entry points for running the agent.
-- `agent.py`, `prompts.py`, and `tools.py` hold core agent wiring, prompts, and tool definitions.
-- `skills/` contains Claude-style skills; each skill lives in its own folder with a `SKILL.md`.
+- `src/deepresearcher/main.py` and `src/deepresearcher/__main__.py` provide the CLI entry points for running the agent.
+- `src/deepresearcher/agent.py`, `src/deepresearcher/prompts.py`, and `src/deepresearcher/tools.py` hold core agent wiring, prompts, and tool definitions.
+- `src/deepresearcher/skills/` contains Claude-style skills; each skill lives in its own folder with a `SKILL.md`.
 - `requirements.txt` lists runtime dependencies.
 
 ## Build, Test, and Development Commands
 - `pip install -r requirements.txt` installs dependencies for local development.
-- `python main.py "Research topic"` runs a one-off research task.
+- `python main.py "Research topic"` runs a one-off research task (wrapper adds `src` to `PYTHONPATH`).
 - `python main.py --interactive` starts interactive mode.
 - `python main.py "Topic" --output ./my_research` writes outputs to a custom directory.
 
